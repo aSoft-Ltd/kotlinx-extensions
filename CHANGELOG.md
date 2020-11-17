@@ -6,8 +6,7 @@
 - Updated to gradle version 6.7
 
 ## New Features
-- Added `Mapper.decodeFromString()`
-- Added `Mapper.encoderToString()`
+Initial features
 
 ## Documentation
 - Update readme
