@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew build
         working-directory: .
       - name: Publishing to sonatype nexus
-        run: chmod +x ./gradlew
+        run: ./gradlew publish
         working-directory: .
       - name: Closing And Releasing Repository
         run: ./gradlew closeAndReleaseRepository
