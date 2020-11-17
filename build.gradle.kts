@@ -2,6 +2,8 @@ plugins {
     id("com.android.library") version "4.1.0"
     kotlin("multiplatform") version "1.4.10"
     id("tz.co.asoft.library") version "0.0.7"
+    id("io.codearte.nexus-staging") version "0.22.0"
+    signing
 }
 
 repositories {
@@ -9,6 +11,9 @@ repositories {
 }
 
 object vers{
+    object asoft {
+        val kotlinx_extensions = "0.0.1"
+    }
     object kotlinx {
         val html = "0.7.2"
     }
@@ -50,3 +55,8 @@ kotlin {
         }
     }
 }
+
+aSoftLibrary(
+    version = vers.asoft.kotlinx_extensions,
+    description = "A bunch of helper classes, functions and extensions generally used in kotlin projects"
+)
