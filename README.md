@@ -1,64 +1,26 @@
-# Kotlinx Serialization Mapper
+# Kotlinx Extensions
 ![badge][badge-maven] ![badge][badge-mpp] ![badge][badge-android] ![badge][badge-js] ![badge][badge-jvm]
 
-## Introduction
-Built on top of the famous `kotlinx-serialization-json`, this library helps to serialize between json maps and kotlin maps. 
+A Bunch of classes, functions and extensions used in aSoft
 
-## Samples
-Getting an map from a json
+## Common Extensions
+- `Action<T>(name,handler:(T)->Unit)`
+- `Json` -> Preconfigured Json for serialization
+
+## Android Extensions
+- ViewHolder -> Helps a lot with findViewById
+### Usage
 ```kotlin
-val json = """
-{
-    "environment": "production",
-    "logging": "warnings",
-    "key": "SOME_TEST_KEY",
-    "bool": true,
-    "integer": 43,
-    "double": 46.55
-}
-""".trimIndent()
-
-val map = Mapper.decodeFromString(json)
-
-val environment: String by map
-val logging: String by map
-val key: String by map
-val bool: Boolean by map
-val integer: Int by map
-val double: Double by map
-```
-
-## Setup:Gradle
-Adding `kotlinx-serialization-mapper` as a dependency becomes as easy as just
-### Kotlin Multiplatform
-```kotlin
-kotlin {
-    // . . .
-    sourceSets {
-        val commonTest by getting {
-            dependencies {
-                implementation("tz.co.asoft:kotlinx-serialization-mapper:+") // please use the latest version possible
-            }        
-        }
-    }
+class VH: ViewHolder(view) {
+    val name by Id<TextView>(R.id.name)
+    val email by Id<EditText>(R.id.email)
 }
 ```
-### Kotlin [android|jvm|js]
-```kotlin
-kotlin {
-    // . . .
-    dependencies {
-        implementationTest("tz.co.asoft:kotlinx-serialization-mapper:+") // please use the latest version possible
-        /* Or
-         * You can be as specific as
-         * "tz.co.asoft:kotlinx-serialization-mapper-android:+"
-         * "tz.co.asoft:kotlinx-serialization-mapper-jvm:+"
-         * "tz.co.asoft:kotlinx-serialization-mapper-js:+"
-        */
-        implementationTest("tz.co.asoft:kotlinx-serialization-mapper-android:+") // please use the latest version possible
-    }
-}
-```
+
+## Js Extensions
+Too many of them to write em down
+See [here](https://github.com/aSoft-Ltd/kotlinx-extensions/tree/master/src/jsMain/kotlin/tz/co/asoft)
+
 [badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/test/1.0.1?style=flat
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 [badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat
