@@ -43,7 +43,7 @@ kotlin {
     }
 }
 
-//aSoftOSSLibrary(
-//    version = vers.asoft.kotlinx_extensions,
-//    description = "A bunch of helper classes, functions and extensions generally used in kotlin projects"
-//)
+aSoftOSSLibrary(
+    version = vers.asoft.kotlinx_extensions,
+    description = "A bunch of helper classes, functions and extensions generally used in kotlin projects"
+)
