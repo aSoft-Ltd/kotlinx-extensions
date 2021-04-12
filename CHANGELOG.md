@@ -1,3 +1,6 @@
+# 0.0.21 : 2021.04.13
+- Added browser extension artifacts
+
 # 0.0.20 : 2021.04.13
 
 - Provided browser extensions as a seperate artifact
