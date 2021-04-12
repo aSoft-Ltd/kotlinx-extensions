@@ -1,16 +1,24 @@
 package kotlinx.extensions
 
-import kotlinx.css.CSSBuilder
-import kotlinx.css.JustifyContent
+import kotlinx.css.*
+
+inline fun CSSBuilder.centerContent() {
+    textAlign = TextAlign.center
+    justifyContent = JustifyContent.center
+}
+
+inline fun CSSBuilder.centerSelf() {
+    justifySelf = JustifyContent.center
+}
+
+var CSSBuilder.justifyItems: JustifyContent
+    inline set(value) = put("justify-items", value.toString())
+    inline get() = JustifyContent.valueOf("justify-items")
 
 var CSSBuilder.gridArea: String
-    set(value) = put("grid-area", value)
-    get() = ""
+    inline set(value) = put("grid-area", value)
+    inline get() = declarations["grid-area"] as String
 
 var CSSBuilder.justifySelf: JustifyContent
-    set(value) {
-        put("justify-self", value.toString())
-    }
-    get() {
-        throw Exception("Justify self is write only property")
-    }
+    inline set(value) = put("justify-self", value.toString())
+    inline get() = JustifyContent.valueOf(declarations["justify-self"].toString())

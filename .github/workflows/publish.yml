@@ -37,12 +37,9 @@ jobs:
       - name: Making sure gradle is executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: Building lib
-        run: ./gradlew build
-        working-directory: .
       - name: Publishing to sonatype nexus
         run: ./gradlew publish
         working-directory: .
       - name: Closing And Releasing Repository
-        run: ./gradlew closeAndReleaseRepository
+        run: ./gradlew :kotlinx-extensions-core:closeAndReleaseRepository
         working-directory: .
