@@ -11,6 +11,7 @@ kotlin {
         val main by getting {
             dependencies {
                 api(project(":kotlinx-extensions-core"))
+                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${vers.kotlinx.coroutines}")
                 api("org.jetbrains:kotlin-extensions:${vers.wrappers.extensions}")
                 api("org.jetbrains.kotlinx:kotlinx-html:${vers.kotlinx.html}")
                 api("org.jetbrains:kotlin-css:${vers.wrappers.css}")
