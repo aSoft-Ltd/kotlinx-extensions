@@ -30,6 +30,8 @@ kotlin {
     )
 
     val linuxTargets = listOf(
+        linuxArm32Hfp(),
+        linuxArm64(),
         linuxX64(),
     )
     sourceSets {
