@@ -30,21 +30,14 @@ kotlin {
     )
 
     val linuxTargets = listOf(
+        linuxArm32Hfp(),
+        linuxArm64(),
         linuxX64(),
     )
     sourceSets {
         val commonMain by getting {
             dependencies {
                 api("org.jetbrains.kotlinx:kotlinx-serialization-json:${vers.kotlinx.serialization}")
-                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${vers.kotlinx.coroutines}")
-            }
-        }
-
-        val jsMain by getting {
-            dependencies {
-                api("org.jetbrains:kotlin-extensions:${vers.wrappers.extensions}")
-                api("org.jetbrains.kotlinx:kotlinx-html:${vers.kotlinx.html}")
-                api("org.jetbrains:kotlin-css:${vers.wrappers.css}")
             }
         }
     }

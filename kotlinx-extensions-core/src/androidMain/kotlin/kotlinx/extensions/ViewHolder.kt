@@ -1,4 +1,4 @@
-package kotlinx.extensions.browser
+package kotlinx.extensions
 
 import android.view.View
 import kotlin.properties.ReadOnlyProperty
