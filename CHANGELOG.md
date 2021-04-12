@@ -1,4 +1,4 @@
-# 0.0.10 : 2021.04.12
+# 0.0.20 : 2021.04.13
 
 - Provided browser extensions as a seperate artifact
 - Upgraded gradle to 7.0

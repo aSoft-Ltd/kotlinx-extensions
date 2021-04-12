@@ -5,7 +5,7 @@ object vers {
 
     object asoft {
         val builders = "1.3.24"
-        val kotlinx_extensions = "0.0.10"
+        val kotlinx_extensions = "0.0.20"
     }
 
     object kotlinx {
