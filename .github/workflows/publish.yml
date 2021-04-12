@@ -1,11 +1,17 @@
-name: Build Extensions
+name: Deploy Extensions
 
 on:
-  pull_request:
-    branches: [ master-dev ]
+  push:
+    branches: [ master ]
+
+env:
+  ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
+  ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
+  ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
+  ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
 
 jobs:
-  build-lib:
+  publish-lib:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,8 +34,15 @@ jobs:
             ~/.konan/kotlin-native-macos*
           key: ${{ runner.os }}-konan-
           restore-keys: ${{ runner.os }}-konan-
+      - name: Making sure gradle is executable
+        run: chmod +x ./gradlew
+        working-directory: .
       - name: Building lib
-        run: |
-          chmod +x ./gradlew
-          ./gradlew clean build
+        run: ./gradlew build
+        working-directory: .
+      - name: Publishing to sonatype nexus
+        run: ./gradlew publish
+        working-directory: .
+      - name: Closing And Releasing Repository
+        run: ./gradlew closeAndReleaseRepository
         working-directory: .

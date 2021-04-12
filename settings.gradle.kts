@@ -14,4 +14,8 @@ pluginManagement {
         }
     }
 }
+
 rootProject.name = "kotlinx-extensions"
+
+include(":kotlinx-extensions-core")
+include(":kotlinx-extensions-browser")
