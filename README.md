@@ -27,7 +27,7 @@ class VH : ViewHolder(view) {
 Too many of them to write em down
 See [here](https://github.com/aSoft-Ltd/kotlinx-extensions/tree/master/src/jsMain/kotlin/tz/co/asoft)
 
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/kotlinx-extensions-core/0.0.21?style=flat
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/kotlinx-extensions-core/0.0.30?style=flat
 
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 
