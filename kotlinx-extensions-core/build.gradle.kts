@@ -1,20 +1,20 @@
 plugins {
-//    id("com.android.library")
+    id("com.android.library")
     kotlin("multiplatform")
     id("tz.co.asoft.library")
     id("io.codearte.nexus-staging")
     signing
 }
 
-//android {
-//    configureAndroid("src/androidMain")
-//    defaultConfig {
-//        minSdkVersion(9)
-//    }
-//}
+android {
+    configureAndroid("src/androidMain")
+    defaultConfig {
+        minSdkVersion(9)
+    }
+}
 
 kotlin {
-//    android { library() }
+    android { library() }
     jvm { library() }
     js(IR) { library() }
     val darwinTargets = listOf(

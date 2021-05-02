@@ -4,3 +4,9 @@ plugins {
     id("tz.co.asoft.library") version vers.asoft.builders apply false
     id("io.codearte.nexus-staging") version vers.nexus_staging apply false
 }
+
+subprojects {
+    repositories {
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
+    }
+}

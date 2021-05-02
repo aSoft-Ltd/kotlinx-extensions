@@ -1,3 +1,6 @@
+# 0.0.30 : 2021.05.02
+- Added support for kotlin 1.5.0
+
 # 0.0.21 : 2021.04.13
 - Added browser extension artifacts
 
